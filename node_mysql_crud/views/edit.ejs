@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit User</title>
+</head>
+<body>
+  <h2>Edit User</h2>
+  <form action="/edit/<%= user.id %>" method="POST">
+    <input type="text" name="id" value="<%= user.id %>" required />
+    <input type="text" name="name" value="<%= user.name %>" required />
+    <input type="email" name="email" value="<%= user.email %>" required />
+    <input type="number" name="age" value="<%= user.age %>" required />
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>

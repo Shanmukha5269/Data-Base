@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRUD Application</title>
+</head>
+<body>
+  <h1>User List</h1>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Actions</th>
+    </tr>
+    <% users.forEach(user => { %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.age %></td>
+      <td>
+        <a href="/edit/<%= user.id %>">Edit</a> |
+        <a href="/delete/<%= user.id %>">Delete</a>
+      </td>
+    </tr>
+    <% }); %>
+  </table>
+  <h2>Add User</h2>
+  <form action="/add" method="POST">
+    <input type="number" name="id" placeholder="Id" required />
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="number" name="age" placeholder="Age" required />
+    <button type="submit">Add</button>
+  </form>
+</body>
+</html>
